@@ -1,0 +1,9 @@
+rat>radin
+rat>rongeur
+rat>danse
+rat>serrurerie
+rat>racaille
+rat>agent
+rat>zodiaque
+rat>Nom
+rat>Adj

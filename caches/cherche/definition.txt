@@ -1,0 +1,12 @@
+<div id="0">
+
+1. (Jeu) Être à la cherche, ne pas avoir encore un seul point.
+2. (Architecture) (Vieilli) (Désuet) Variante de cerce, courbe qui ne peut être décrite d'un seul trait de compas.
+3. (Rare) Action de chercher.
+4. (Architecture) Variante de cerce.
+5. Feuille de bois mince que l'on ferme en cercle pour fabriquer des cribles et des tamis.
+6. (Architecture) Courbe d'une voussure, cintre d'une courbe.
+7. (Géométrie) Règle ou latte plate, permettant aux dessinateurs de plans de tracer des courbes. Cette latte est contrainte en flexion pour adopter la forme voulue. Connue également sous l'appellation anglophone de spline.
+8. (Par extension) Structure circulaire supportant un décors de spectacle, souvent réalisé en treillis.
+9. Dans le domaine mathématique de l'analyse numérique, une spline ? mot anglais se prononçant « splaïne » (/spla?n/), mais souvent prononcé à la française /splin/ ? est une fonction définie par morceaux par des polynômes. Le terme français correspondant est cerce, mais l'usage a consacré le terme anglais (voir plus loin Étymologie).
+</div>
