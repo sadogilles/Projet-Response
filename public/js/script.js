@@ -1,6 +1,6 @@
 
-
 $(function(){
+
 
    $('#search-form').on('submit',(event)=>{
 
@@ -287,13 +287,47 @@ $(function(){
 
         });
 
-        
+    });
 
+    $('#rall-btn').on('click',()=>{
        
+        //$('#r-datatable').show();
 
+        var word = $('#search-input');
+        var url_ ='api/rezo/'+word.val()+'/relations';
+        
+        $.ajax({
+            url:url_,
+            method:'get',
+            success:(data)=>{
+                
+                var datas = [];
 
+                for (var i in data.r){
+                    datas.push(data.r[i]);
+                }
 
+                $('#r-datatable').DataTable( {
+                    data: datas,
+                    columns: [
+                        { title: "Terme 1" },
+                        { title: "Terme 2" },
+                        { title: "Relation" },
+                        { title: "Poid" }
+                    ]
+                } );
+            },
+            error:(err)=>{
+                console.log('une erreur');
+                console.log(err);
+            }
 
+        });
+      
+         
+        
+        
+       
     });
 
     

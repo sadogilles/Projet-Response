@@ -34,11 +34,12 @@
     }
 
   .footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
+   position: static;
+   /* left: 0;
+   bottom: 0;  */
    width: 100%;
-   background-color: red;
+   min-height: 20px;
+   background-color:rgb(76,175,80);
    color: white;
    text-align: center;
 }
@@ -48,24 +49,37 @@ div#rel-nodes,div#risa-node{
   border: 1px dotted black;
   overflow: auto;
 }
+.ui-autocomplete {
+            max-height: 200px;
+            overflow-y: auto;
+            /* prevent horizontal scrollbar */
+            overflow-x: hidden;
+            /* add padding to account for vertical scrollbar */
+            padding-right: 20px;
+        } 
 
     </style>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src ="js/autocomplete-script.js"></script>
-</head>
-<body>
-    <!-- <div class="w3-top ">
-        
-        <div class="w3-bar w3-border w3-black  w3-xlarge">
-          <a href="#" class="w3-bar-item w3-button w3-center">Diko </a>
-         <a href="#" class="w3-bar-item w3-button w3-green  w3-right">rechercher</a>
-          <input type="texto" class="w3-bar-item w3-input w3-right" placeholder="Search.."> -->
 
-        <!-- </div>
-    </div> -->
-        <div class="w3-container w3-black w3-padding-large w3-margin-large w3-section  w3-margin-top     ">
+ <!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+ <!-- DataTables js-->
+
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+
+ <!-- DataTables css -->
+<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">  -->
+<!-- <link rel="stylesheet" href="https://cdn.datatables.net/scroller/2.0.3/css/scroller.dataTables.min.csss"> -->
+<link rel="stylesheet" href="css/datatable.css"> 
+<!-- autocompletion -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="./js/autocomplete-script.js"></script>
+
+</head>
+<body class="w3-black">
+
+        <div class="w3-container w3-black w3-padding-32 w3-margin-large w3-section w3-black ">
             <h2>Que voulez-vous rechercher ?</h2>
             
           
@@ -101,7 +115,7 @@ div#rel-nodes,div#risa-node{
                 <div id="refinement-here" class="w3-container w3-margin-top">
                  
                 </div>
-            </div>
+          </div>
               <div class="w3-panel w3-border w3-container"  >
                 <h1>Relation:<button href="#" class="w3-bar-item w3-button w3-green w3-margin-right" id="relation"> &#x203A; </button></h1>
                 <div id="rel-nodes" class="w3-container w3-border">entrées correspondant : </div>
@@ -109,34 +123,33 @@ div#rel-nodes,div#risa-node{
 
                 </div>
                 
-                </div>
+              </div>
                 <div class="w3-panel w3-border w3-container"  >
                   <h1 >Relation de type R_ISA  : <span id="risa"></span>   <button href="#" class="w3-bar-item w3-button w3-green w3-margin-right" id="risa-btn"> &#x203A; </button></h1>
                   <div id="risa-node" class="w3-container w3-border w3-padding-16 w3-margin-bottom">entrées correspondant : </div>
                   
-                  </div>
-                  
-                  </div>
-              </div>
+                </div>
+                <div class="w3-panel w3-border w3-container"  >
+                  <h1 >Toutes les relations (Trie)  : <span id="risa"></span>   <button href="#" class="w3-bar-item w3-button w3-green w3-margin-right" id="rall-btn"> &#x203A; </button></h1>
+                  <table id="r-datatable" class="display" style="width:100%">
+                    <!-- <thead>
+                        <tr>
+                            <th>Term 1 </th>
+                            <th>Term 2</th>
+                            <th>Relation</th>
+                            <th>Poid</th>
 
+                        </tr>
+                    </thead> -->
+                </table>
+                </div>
+                 
             
-          </div>
+        </div>
 
-    <!-- <div class="footer">
-      <p>Diko @2020</p>
-    </div> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
-
-    <!-- <script
-  src="https://code.jquery.com/jquery-2.2.1.min.js"
-  integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
-  crossorigin="anonymous"></script> -->
-  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="js/autocomplete.min.js"></script>
-    
-    <script src="js/jquery-min.js"></script> -->
-    
+    <div class="footer">
+      <p>Diko @2021</p>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>

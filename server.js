@@ -22,7 +22,7 @@ const { json } = require('body-parser');
 const { resolve } = require('path');
 const router = express.Router();
 
-const PORT = process.env.PORT || 5555; //port configuration
+const PORT = process.env.PORT || 4000; //port configuration
 
 
 const host ="http://www.jeuxdemots.org";
@@ -37,7 +37,7 @@ app.use(bodyParser.json()); //madatory before using route (permit to parse form-
 app.use(bodyParser.urlencoded({extended:true}));
 
 router.get('/',(req,res)=>{     // /api/rezon ->get request
-   
+    console.log(keywords);
     res.json({msg:'rezo: default route'});
 });
 
@@ -155,6 +155,7 @@ router.get('/:word/refinement/:word_refine',(req,res)=>{ //get the definition of
 
 router.get('/:word/relations',(req,res)=>{
 
+    
     let relations = getRelations(req.params.word.toLowerCase());
 
     res.json({"r":relations});
@@ -354,7 +355,18 @@ function getRelations(word){
     rweightName=[];
     allRel=[]; 
 
-    //read relation file
+    
+   if(fs.existsSync(relation_new_path)){
+       let dat = fs.readFileSync(relation_new_path,{encoding:"utf-8"},(err)=>{
+
+        if(err) console.log(err);
+       })
+       
+       let dat2 = csvToArray(dat);
+       dat2.shift(); //remove header (first element of array)
+       return dat2;
+   }
+
     let relations = fs.readFileSync(relation_path,{encoding:"utf-8"},(err)=>{
         
         if(err) console.log(err);
@@ -495,7 +507,7 @@ function getRelations(word){
 
        fs.writeFileSync(relation_new_path,data,{encoding:"utf-8"});
 
-       return data;
+       return allRelReplaced;
  
 }
 function getRelationsType(word){
